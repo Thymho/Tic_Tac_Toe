@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="master.css" rel="stylesheet"/>
+        <script src='GameManager.js'></script>
+        <script src='maptile.js'></script>
+        <script src="http://cdn.jsdelivr.net/npm/vue"></script>
+        <title>Tic Tac Toe</title>
+    </head>
+    <body>
+        <div class="start_game-user1"
+             v-if="gms.inProgress == false && gms.winner == null">
+            <p>이름: {{ p1 }}</p>
+            <p>전적: {{ win_1p }}승 / {{ lose_1p }}패</p>
+        </div>
+        <!-- p1에 대한 데이터를 담아두는 div -->
+
+        <div class="start_game-user2"
+             v-if="gms.inProgress == false && gms.winner == null">
+            <p>이름: {{ p2 }}</p>
+            <p>전적: {{ win_2p }}승 / {{ lose_2p }}패</p>
+        </div>
+        <!-- p2에 대한 데이터를 담아두는 div -->
+        
+        <div class="wrap">
+            <div v-if ="gms.inProgress == true">
+                <div class="game-user1">
+                    <p>이름: {{ p1 }}</p>
+                    <p>전적: {{ win_1p }}승 / {{ lose_1p }}패</p>
+                    <p>현재 턴: {{ p1_turn }}</p>
+                </div>
+                <!-- p1에 대한 데이터를 담아두는 div -->
+        
+                <div id="TTT_app">
+                        <div id="gameinfo"> 
+                            {{getmessage}}
+                        </div>
+                        <div id="game-map">
+                        <div v-for = "(maptile, i) in maps"
+                            v-on:click = "oxinput"
+                            class="game-tile">
+                            <img src="기말고사/event_img_o.png" alt="" v-if="maptile.value == 'O'">
+                        <img src="기말고사/event_img_x.png" alt="" v-if="maptile.value == 'X'">
+                    </div>
+                    <div>
+                        <input id="reset" type="button" onclick="gms.Init()" value = "리셋 버튼">
+                    </div>
+                </div>
+                <!-- game_map -->
+            </div>
+
+            <div class="game-user2">
+                <p>이름: {{ p2 }}</p>
+                <p>전적: {{ win_2p }}승 / {{ lose_2p }}패</p>
+                <p>현재 턴: {{ p2_turn }}</p>
+            </div>
+            <!-- p2에 대한 데이터를 담아두는 div -->
+
+        </div>
+
+        <div class="result_screen" v-if ="gms.inProgress == false && gms.winner != null">
+            {{win}}
+        </div>
+    </div>
+    <button onclick="gms.Start()" id="start" class="clearfix">게임 시작</button>
+        <script src = "main.js"></script>
+    </body>
+</html>

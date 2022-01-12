@@ -1,0 +1,119 @@
+.wrap {
+    width: 1086px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+img {
+    width: 100px;
+}
+
+#TTT_app {
+    float: left;
+    width: 500px;
+    margin: 0 auto;
+    border : 1px solid #000;
+
+}
+#gameinfo {
+    padding: 15px;
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight:  bold;
+    text-align: center;
+    background-color:  #eee;
+}
+#game-map {
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.game-tile {
+    width:  33.33%;
+    height: 33.33%;
+
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    font-family: cursive;
+    font-size: 75px;
+    text-transform:  uppercase;
+
+    border-radius: 15px;
+    cursor: pointer;
+    user-select: none;
+    -moz-user-select: none;
+}
+
+.game-tile.highlighted {color : green;}
+.game-tile:hover {background-color: #eee;}
+
+.game-tile:nth-child(-n+6) {border-bottom: 15px solid brown;}
+.game-tile:nth-child(3n+1),
+.game-tile:nth-child(3n+2) {border-right: 15px solid brown;}
+
+.game-user1 { /* p1의 div css */
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    float: left;
+    margin-right: 90px;
+    margin-top: 150px;
+}
+
+.game-user2 { /* p2의 div css */
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    float: left;
+    margin-left: 90px;
+    margin-top: 150px;
+}
+
+#start { /* 게임시작 버튼 */
+    width: 200px;
+    height: 50px;
+    margin-top: 30px;
+    display: block;
+    margin: auto;
+    padding: 0;
+}
+
+.result_screen {
+    width: 300px;
+    height: 100px;
+    border: 1px solid black;
+    font-size: 30px;
+    margin: 0 auto;
+    padding: 0;
+    top: 200px;
+    position: relative;
+}
+
+#reset {
+    float: left;
+    margin-left: 180px;
+}
+
+.start_game-user1 { /* 시작 페이지 p1의 div css */
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    float: left;
+    margin-left: 500px;
+    margin-top: 150px;
+}
+
+.start_game-user2 { /* 시작 페이지 p2의 div css */
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    float: left;
+    margin-left: 90px;
+    margin-top: 150px;
+}
